@@ -1,5 +1,5 @@
-# MarketTo Monitor by CyberBitz
-# https://github.com/CyberBitz/MarkettoMonitor
+# Marketo Monitor by CyberBitz
+# https://github.com/CyberBitz/MarketoMonitor
 
 from distutils import text_file
 from bs4 import BeautifulSoup
@@ -14,7 +14,7 @@ import pandas as pd
 marketto_orgs = []
 marketto_orgs_new = []
 
-text_file = open("marketto_orgs.txt", "r")
+text_file = open("marketo_orgs.txt", "r")
 lines = text_file.readlines()
 for lns in lines:
     marketto_orgs.append(lns.replace("\n", ""))
@@ -59,7 +59,7 @@ for oz in orgs:
         print("NEW: " + ogz)
         marketto_orgs_new.append(ogz)
 
-file_object = open('marketto_orgs.txt', 'a')
+file_object = open('marketo_orgs.txt', 'a')
 for norg in marketto_orgs_new:
     file_object.write(norg+"\n")
 
