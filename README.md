@@ -1,5 +1,5 @@
 # MarketoMonitor "Marketo leaked data marketplace" 
-Find them on tor: http://marketojbwagqnwx.onion/
+Find them on TOR: http://marketojbwagqnwx.onion/
 
 They provide the dump data on TOR and on the Web. This script uses the NON TOR option. 
 
