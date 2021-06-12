@@ -1,6 +1,8 @@
 # MarketoMonitor "Marketo leaked data marketplace" 
 Find them on tor: http://marketojbwagqnwx.onion/
 
+They provide the dump data on TOR and on the Web. This script uses the NON TOR option. 
+
 
 This python script checks all the marketto dumps and updates to a text tile listing all the available dumps. 
 
@@ -8,7 +10,7 @@ The purpose of this is to get alerts of companies that you may have as a vendor 
 
 I also implement a telegram bot push to get notified of any new dumps that they post. 
 
-It is probably wise to run this on a cloud server on a daily cron. 
+### It is probably wise to run this on a cloud server on a daily cron. 
 
 
 
