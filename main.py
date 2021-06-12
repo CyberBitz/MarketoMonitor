@@ -1,4 +1,3 @@
-# This is a sample Python script.
 from distutils import text_file
 
 from bs4 import BeautifulSoup
