@@ -1,15 +1,8 @@
 # Marketo Monitor by CyberBitz
 # https://github.com/CyberBitz/MarketoMonitor
 
-from distutils import text_file
-from bs4 import BeautifulSoup
 import requests
-import re
-from re import sub
-from decimal import Decimal
-import io
-from datetime import datetime
-import pandas as pd
+from bs4 import BeautifulSoup
 
 marketto_orgs = []
 marketto_orgs_new = []
@@ -31,8 +24,9 @@ while valid > 0:
         if response.status_code != 200:
             valid = 0
         html_text = response.text
-    except:
-        print("bad")
+    except requests.exceptions.RequestException as e:
+        raise SystemExit(e)
+
     print(response.status_code)
     soup = BeautifulSoup(html_text, 'lxml')
 
@@ -65,6 +59,6 @@ for norg in marketto_orgs_new:
 
 
 print(marketto_orgs)
-print(marketto_orgs_new)
-# do any alerting here, I implement a telegram bot I push the new orgs to. 
+print(marketto_orgs_new) # print array of new orgs posted
+# do any alerting here, I implement a telegram bot I push the new orgs that have been added.
 
