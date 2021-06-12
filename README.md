@@ -10,7 +10,7 @@ The purpose of this is to get alerts of companies that you may have as a vendor 
 
 I also implement a telegram bot push to get notified of any new dumps that they post. 
 
-### It is probably wise to run this on a cloud server on a daily cron. 
+### It is probably wise to run this on a seperate cloud server on a daily cron. 
 
 
 
