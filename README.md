@@ -15,5 +15,7 @@ I also implement a telegram bot push to get notified of any new dumps that they 
 ## Requirements
 
 pip install beautifulsoup4
+
 pip install requests
 
+pip install lxml
