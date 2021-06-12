@@ -1,8 +1,9 @@
-from distutils import text_file
+# MarketTo Monitor by CyberBitz
+# https://github.com/CyberBitz/MarkettoMonitor
 
+from distutils import text_file
 from bs4 import BeautifulSoup
 import requests
-
 import re
 from re import sub
 from decimal import Decimal
@@ -10,9 +11,6 @@ import io
 from datetime import datetime
 import pandas as pd
 
-# search area of interest
-
-# 'https://marketo.cloud/?page=1'
 marketto_orgs = []
 marketto_orgs_new = []
 
@@ -68,3 +66,5 @@ for norg in marketto_orgs_new:
 
 print(marketto_orgs)
 print(marketto_orgs_new)
+# do any alerting here, I implement a telegram bot I push the new orgs to. 
+
