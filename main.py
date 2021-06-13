@@ -3,6 +3,8 @@
 
 import requests
 from bs4 import BeautifulSoup
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 marketto_orgs = []
 marketto_orgs_new = []
