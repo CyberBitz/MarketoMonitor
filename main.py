@@ -8,7 +8,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 marketto_orgs = []
 marketto_orgs_new = []
-
+file = open('marketo_orgs.txt', 'w+')
 text_file = open("marketo_orgs.txt", "r")
 lines = text_file.readlines()
 for lns in lines:
@@ -18,6 +18,7 @@ valid = 1
 pagecount = 1
 pages = []
 orgs = []
+
 while valid > 0:
     url = 'https://marketo.cloud/?page=' + str(pagecount)
     try:
