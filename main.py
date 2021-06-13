@@ -20,7 +20,6 @@ pages = []
 orgs = []
 while valid > 0:
     url = 'https://marketo.cloud/?page=' + str(pagecount)
-    print(url)
     try:
         response = requests.get(url, verify=False)
         if response.status_code != 200:
@@ -29,7 +28,6 @@ while valid > 0:
     except requests.exceptions.RequestException as e:
         raise SystemExit(e)
 
-    print(response.status_code)
     soup = BeautifulSoup(html_text, 'lxml')
 
     pgs = soup.find_all('li', class_='page-item')
@@ -52,7 +50,6 @@ while valid > 0:
 for oz in orgs:
     ogz = oz.replace("https://", "").replace("http://", "").replace("www.", "")
     if ogz not in marketto_orgs:
-        print("NEW: " + ogz)
         marketto_orgs_new.append(ogz)
 
 file_object = open('marketo_orgs.txt', 'a')
