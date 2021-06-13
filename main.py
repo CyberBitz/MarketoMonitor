@@ -2,13 +2,15 @@
 # https://github.com/CyberBitz/MarketoMonitor
 
 import requests
+import os
 from bs4 import BeautifulSoup
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 marketto_orgs = []
 marketto_orgs_new = []
-file = open('marketo_orgs.txt', 'w+')
+if not os.path.exists('marketo_orgs.txt'):
+    file = open('marketo_orgs.txt', 'w+')
 text_file = open("marketo_orgs.txt", "r")
 lines = text_file.readlines()
 for lns in lines:
@@ -57,8 +59,9 @@ file_object = open('marketo_orgs.txt', 'a')
 for norg in marketto_orgs_new:
     file_object.write(norg+"\n")
 
-
+print("Recorded:") 
 print(marketto_orgs)
+print("New:")
 print(marketto_orgs_new) # print array of new orgs posted
 # do any alerting here, I implement a telegram bot I push the new orgs that have been added.
 
