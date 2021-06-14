@@ -37,7 +37,8 @@ class bcolors:
 clear()
 print(f"{bcolors.NORMAL}Receiving Page: {bcolors.ENDC}")
 def receivingPages():
-    print(f"{bcolors.STATUS}" + str(pagecount) + f" {bcolors.ENDC}", end="", flush=True)
+    if(pagecount is not 1):
+        print(f"{bcolors.STATUS}" + str(pagecount-1) + f" {bcolors.ENDC}", end="", flush=True)
 
 while valid > 0:
     url = 'https://marketo.cloud/?page=' + str(pagecount)
@@ -46,12 +47,14 @@ while valid > 0:
 
     try:
         response = requests.get(url, verify=False)
-        if response.status_code != 200:
-            valid = 0
-        html_text = response.text
     except requests.exceptions.RequestException as e:
-        raise SystemExit(e)
+        raise SystemExit(f"{bcolors.FAIL}Error: " + e + f"{bcolors.NORMAL}")
 
+    if response.status_code != 200:
+                valid = 0
+                break
+    
+    html_text = response.text
     soup = BeautifulSoup(html_text, 'lxml')
 
     pgs = soup.find_all('li', class_='page-item')
