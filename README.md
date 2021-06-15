@@ -19,3 +19,6 @@ pip install beautifulsoup4
 pip install requests
 
 pip install lxml
+
+
+Works on my machine Windows 10. I will work on getting it to run on Linux. 
